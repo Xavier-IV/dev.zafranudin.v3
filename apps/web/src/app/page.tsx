@@ -1,5 +1,13 @@
+"use clients";
+
 import FancySeparator from "@/components/FancySeparator";
 import Navbar from "@/components/Navbar";
+import dynamic from "next/dynamic";
+
+const SoftwareDevBadge = dynamic(
+  () => import("../components/SoftwareDevBadge"),
+  { ssr: false },
+);
 
 export default function Home() {
   return (
@@ -129,16 +137,7 @@ export default function Home() {
                 Currently building open-source game, feel free to give it a try
                 on the web browser. Made with Godot Engine.
               </p>
-              <iframe
-                frameBorder="0"
-                src="https://itch.io/embed/2537589?dark=true"
-                width="208"
-                height="167"
-              >
-                <a href="https://xavier-iv.itch.io/softwaredev">
-                  SoftwareDev by Xavier-IV
-                </a>
-              </iframe>
+              <SoftwareDevBadge />
             </div>
           </div>
         </div>

@@ -1,3 +1,5 @@
+"use client";
+
 export default function FancySeparator() {
   return (
     <div className="separator flex items-center justify-center gap-2 my-14">
