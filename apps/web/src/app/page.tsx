@@ -4,7 +4,7 @@ import {
   RegularLinkedinOriginal,
   RegularYoutube,
 } from "@repo/ui/lineicons";
-import { Button, Image, Tooltip } from "@repo/ui/nextui";
+import { Button, Card, Image, Tooltip } from "@repo/ui/nextui";
 import CardList from "./CardList";
 
 const clouds = [
@@ -102,8 +102,8 @@ export default function Home() {
               <h3 className="text-xl">Cloud &amp; Deployment</h3>
               <p>{clouds.map((cloud) => cloud.name).join(", ")}</p>
               <div className="flex gap-2 items-center justify-center fill-white">
-                {clouds.map((cloud) => (
-                  <div className="bg-white rounded-md">
+                {clouds.map((cloud, key) => (
+                  <div key={key} className="bg-white rounded-md">
                     <Tooltip content={cloud.name} className="bg-zinc-800">
                       <Image
                         src={cloud.icon}
@@ -120,8 +120,8 @@ export default function Home() {
               <h3 className="text-xl">Frontend Technologies</h3>
               <p>{frontends.map((frontend) => frontend.name).join(", ")}</p>
               <div className="flex gap-2 items-center justify-center fill-white">
-                {frontends.map((frontend) => (
-                  <div className="bg-white rounded-md">
+                {frontends.map((frontend, key) => (
+                  <div key={key} className="bg-white rounded-md">
                     <Tooltip content={frontend.name} className="bg-zinc-800">
                       <Image
                         src={frontend.icon}
@@ -138,8 +138,8 @@ export default function Home() {
               <h3 className="text-xl">Backend Technologies</h3>
               <p>{backends.map((backend) => backend.name).join(", ")}</p>
               <div className="flex gap-2 items-center justify-center fill-white">
-                {backends.map((backend) => (
-                  <div className="bg-white rounded-md">
+                {backends.map((backend, key) => (
+                  <div key={key} className="bg-white rounded-md">
                     <Tooltip content={backend.name} className="bg-zinc-800">
                       <Image
                         src={backend.icon}
@@ -156,8 +156,8 @@ export default function Home() {
               <h3 className="text-xl">Programming Languages</h3>
               <p>{languages.map((language) => language.name).join(", ")}</p>
               <div className="flex gap-2 items-center justify-center fill-white">
-                {languages.map((language) => (
-                  <div className="bg-white rounded-md">
+                {languages.map((language, key) => (
+                  <div key={key} className="bg-white rounded-md">
                     <Tooltip content={language.name} className="bg-zinc-800">
                       <Image
                         src={language.icon}
@@ -174,8 +174,8 @@ export default function Home() {
               <h3 className="text-xl">Database</h3>
               <p>{databases.map((database) => database.name).join(", ")}</p>
               <div className="flex gap-2 items-center justify-center fill-white">
-                {databases.map((database) => (
-                  <div className="bg-white rounded-md">
+                {databases.map((database, key) => (
+                  <div key={key} className="bg-white rounded-md">
                     <Tooltip content={database.name} className="bg-zinc-800">
                       <Image
                         src={database.icon}
@@ -190,6 +190,14 @@ export default function Home() {
           </div>
 
           <div className="mt-20"></div>
+        </div>
+      </div>
+
+      <div className="mx-auto mt-10 px-4 md:px-10 flex flex-col text-center gap-10 items-center justify-center w-full border-b-2 border-b-zinc-500">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <Card>
+            <h1>Klarna Bank AB</h1>
+          </Card>
         </div>
       </div>
     </div>

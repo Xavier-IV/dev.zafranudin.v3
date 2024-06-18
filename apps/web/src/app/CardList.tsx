@@ -36,7 +36,7 @@ export default function CardList() {
       { opacity: 1, filter: "blur(0px)" },
       { duration: 1, delay: staggerMenuItems },
     );
-  }, []);
+  }, [staggerMenuItems]);
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -46,8 +46,8 @@ export default function CardList() {
       transition={{ duration: 0.2 }}
       className="border bg-black rounded-xl border-zinc-600 max-w-7xl mt-10 grid grid-cols-1 divide-y lg:divide-y-0 lg:grid-cols-4 w-full text-left divide-x-0 lg:divide-x divide-zinc-800"
     >
-      {achievements.map((achievement) => {
-        return <Card {...achievement} />;
+      {achievements.map((achievement, key) => {
+        return <Card key={key} {...achievement} />;
       })}
     </motion.div>
   );
